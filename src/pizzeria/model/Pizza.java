@@ -11,7 +11,7 @@ public class Pizza {
 	public Pizza(String code, String libelle, double prix  ){
 		
 		compteur ++;
-		id = compteur;
+		this.id = compteur;
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
