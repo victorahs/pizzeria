@@ -6,7 +6,7 @@ public class Pizza {
 	String libelle;
 	double prix;
 	
-	static int compteur = 0;
+	private static int compteur = 0;
 	
 	public Pizza(String code, String libelle, double prix  ){
 		
