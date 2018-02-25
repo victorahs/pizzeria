@@ -86,72 +86,28 @@ public class PizzeriaAdminConsoleApp {
 				break;
 
 			case 4:
-//				for (int i = 0; i < pizzas.length; i++) {
-//					System.out.println(pizzas[i].getCode() + "->" + pizzas[i].getLibelle() + "(" + pizzas[i].getPrix()
-//							+ "\u20ac" + ")");
-//
-//				}
-//				System.out.println("Veuillez saisir le code de la pizza à supprimer:");
-//				String codeSupr = questionUser.next();
-//				int taillePizzas = pizzas.length;
-//				Pizza [] pizzasCopy = new Pizza [pizzas.length - 1];
-//				
-//				for (int i = 0; i < pizzas.length; i++) {
-//					if (pizzas[i].getCode().equals(codeSupr)) {
-//						
-//						for(int j=i+1; j<pizzas.length; j++)
-//						{ 
-//						pizzasCopy[j]=pizzas[j+1];
-//							
-//					        }
-//						taillePizzas=taillePizzas-1;	
-//						for(int k=0; k<taillePizzas; k++)
-//						{System.out.println(pizzas[k].getCode() + "->" + pizzas[k].getLibelle() + "(" + pizzas[k].getPrix()
-//								+ "\u20ac" + ")");
-//
-//
-//					}
-//				}
-//				}
-				int i=0;
+
+				int i = 0;
 				System.out.println("Veuillez saisir le code de la pizza à supprimer:");
 				String codeSupr = questionUser.next();
-				
-				while((i<pizzas.length )&&(!pizzas[i].getCode().equals(codeSupr))){
-				i++;
+
+				while ((i < pizzas.length) && (!pizzas[i].getCode().equals(codeSupr))) {
+					i++;
+
 				}
-				while(i<pizzas.length -1){
-				pizzas[i]=pizzas[i+1];
-				i++;
+				while (i < pizzas.length - 1) {
+					pizzas[i] = pizzas[i + 1];
+					i++;
+
 				}
-				
-				
-				
-				
-//				Pizza[] pizzasup =new Pizza[pizzas.length -1];
-//				for(i=0;i<pizzasup.length -1;i++){
-//				pizzasup[i]=pizzas[i];
-//				}
-//				pizzas=pizzasup;
-				
+
 				pizzas = Arrays.copyOf(pizzas, pizzas.length - 1);
-				for (int j = 0; j < pizzas.length; j++) {
-					System.out.println(pizzas[j].getCode() + "->" + pizzas[j].getLibelle() + "(" + pizzas[j].getPrix()
-								+ "\u20ac" + ")");
-
-					}
-				
-					break;
-				
-				
-
-			case 99:
-				System.out.println("Aurevoir");
 
 				break;
 
 			}
 		} while (choix != 99);
+		System.out.println("Aurevoir");
 	}
 
 }
