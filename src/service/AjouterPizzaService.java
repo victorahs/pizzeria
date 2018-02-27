@@ -8,8 +8,13 @@ import exception.SavePizzaException;
 import pizzeria.model.CategoriePizza;
 import pizzeria.model.Pizza;
 
+/**Class qui ajoute une pizzas
+ * @author ETY0005
+ *
+ */
 public class AjouterPizzaService extends MenuService {
 
+	
 	@Override
 	public void executeUC(Scanner scanner, IPizzaDao dao) throws SavePizzaException {
 		// TODO Auto-generated method stub
@@ -25,13 +30,10 @@ public class AjouterPizzaService extends MenuService {
 		System.out.println("Veuillez saisir le prix:");
 		double prix = scanner.nextDouble();
 		System.out.println("Veuillez saisir la catégorie de pizza : viande, sans viande, poisson");
-		CategoriePizza categorie =  CategoriePizza.findByLibelle(scanner.next());
+		CategoriePizza categorie = CategoriePizza.findByLibelle(scanner.next());
 
 		dao.saveNewPizza((new Pizza(code, lib, prix, categorie)));
 
-		
-		
 	}
-
 
 }

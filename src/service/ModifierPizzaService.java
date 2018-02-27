@@ -8,6 +8,10 @@ import exception.UpdatePizzaException;
 import pizzeria.model.CategoriePizza;
 import pizzeria.model.Pizza;
 
+/**Création de la classe  qui permet de modifier la pizza
+ * @author ETY0005
+ *
+ */
 public class ModifierPizzaService extends MenuService {
 
 

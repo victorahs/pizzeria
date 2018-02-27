@@ -1,6 +1,10 @@
 package service;
 
 
+/**Création de la class qui gere le menu 
+ * @author ETY0005
+ *
+ */
 public class MenuServiceFactory {
 
 

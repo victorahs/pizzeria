@@ -6,11 +6,20 @@ import java.util.List;
 import pizzeria.model.CategoriePizza;
 import pizzeria.model.Pizza;
 
+/**Implementation de IPizzaDao qui CRUD une liste de pizzas
+ * @author ETY0005
+ *
+ */
 public class PizzaMemDao implements IPizzaDao {
 
 	List<Pizza> pizzas;
 
+
+	/**Insertion de pizza dans la liste pizzas
+	 * 
+	 */
 	public PizzaMemDao() {
+		
 		pizzas = new ArrayList<>();
 
 		pizzas.add(new Pizza(0, "PEP", "Pépéroni", 12.50, CategoriePizza.VIANDE));
@@ -70,7 +79,7 @@ public class PizzaMemDao implements IPizzaDao {
 	}
 	
 	/**
-	 * @param codePizza 
+	 * @param codePizza code de la pizza pour laquel on cherche l'index
 	 * @return index de la pizza correspondante
 	 */
 	public int findIndexPizzaByCode(String codePizza) {
