@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 import dao.IPizzaDao;
 
-abstract class MenuService {
+public abstract class MenuService {
 	
-	abstract void executeUC(Scanner scanner, IPizzaDao dao);
+	public abstract void executeUC(Scanner scanner, IPizzaDao dao);
 		
 		
 		

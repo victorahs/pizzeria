@@ -13,6 +13,8 @@ import dao.PizzaMemDao;
 import pizzeria.model.Pizza;
 import service.AjouterPizzaService;
 import service.ListerPizzasService;
+import service.MenuService;
+import service.MenuServiceFactory;
 import service.ModifierPizzaService;
 
 public class PizzeriaAdminControllerTp4 {
@@ -35,40 +37,42 @@ public class PizzeriaAdminControllerTp4 {
 			System.out.println("Choisissez une option dans le menu ci dessus");
 
 			choix = questionUser.nextInt();
-
-			switch (choix) {
-			case 1:
-				ListerPizzasService listerPizzas = new ListerPizzasService();
-				listerPizzas.executeUC(questionUser, dao);
-				
-				
-
-				break;
-			case 2:
-				AjouterPizzaService ajouterPizzaService = new AjouterPizzaService();
-				ajouterPizzaService.executeUC(questionUser, dao);
-
-				break;
-			case 3:
-				
-				ModifierPizzaService modifierPizzaService = new ModifierPizzaService();
-				modifierPizzaService.executeUC(questionUser, dao);
-
-					
-				
-
-				break;
-
-			case 4:
-
-				System.out.println("Veuillez saisir le code de la pizza à supprimer:");
-				String codeSupr = questionUser.next();
-
-				dao.deletePizza(codeSupr);
-
-				break;
-
-			}
+			
+			MenuService ms =  MenuServiceFactory.getInstance(choix);
+			ms.executeUC(questionUser, dao);
+//			switch (choix) {
+//			case 1:
+//				ListerPizzasService listerPizzas = new ListerPizzasService();
+//				listerPizzas.executeUC(questionUser, dao);
+//				
+//				
+//
+//				break;
+//			case 2:
+//				AjouterPizzaService ajouterPizzaService = new AjouterPizzaService();
+//				ajouterPizzaService.executeUC(questionUser, dao);
+//
+//				break;
+//			case 3:
+//				
+//				ModifierPizzaService modifierPizzaService = new ModifierPizzaService();
+//				modifierPizzaService.executeUC(questionUser, dao);
+//
+//					
+//				
+//
+//				break;
+//
+//			case 4:
+//
+//				System.out.println("Veuillez saisir le code de la pizza à supprimer:");
+//				String codeSupr = questionUser.next();
+//
+//				dao.deletePizza(codeSupr);
+//
+//				break;
+//
+//			}
 		} while (choix != 99);
 		System.out.println("Aurevoir");
 	}
