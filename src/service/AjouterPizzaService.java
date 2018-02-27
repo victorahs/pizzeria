@@ -29,8 +29,9 @@ public class AjouterPizzaService extends MenuService {
 		String lib = scanner.next();
 		System.out.println("Veuillez saisir le prix:");
 		double prix = scanner.nextDouble();
-		System.out.println("Veuillez saisir la catégorie de pizza : viande, sans viande, poisson");
-		CategoriePizza categorie = CategoriePizza.findByLibelle(scanner.next());
+		System.out.println("Veuillez saisir la catégorie de pizza : Viande, Sans viande, Poisson");
+		String cat = scanner.next();
+		CategoriePizza categorie = CategoriePizza.findByLibelle(cat);
 
 		dao.saveNewPizza((new Pizza(code, lib, prix, categorie)));
 

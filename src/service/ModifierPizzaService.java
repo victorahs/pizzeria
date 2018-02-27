@@ -42,7 +42,7 @@ public class ModifierPizzaService extends MenuService {
 				System.out.println("Veuillez saisir le prix:");
 				double prixM = scanner.nextDouble();
 				
-				System.out.println("Veuillez saisir la catégorie de pizza : viande, sans viande, poisson");
+				System.out.println("Veuillez saisir la catégorie de pizza : Viande, Sans viande, Poisson");
 				String catM = scanner.next();
 				if(CategoriePizza.findByLibelle(catM) == null){
 					
