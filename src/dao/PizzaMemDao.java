@@ -3,6 +3,7 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import pizzeria.model.CategoriePizza;
 import pizzeria.model.Pizza;
 
 public class PizzaMemDao implements IPizzaDao {
@@ -12,14 +13,14 @@ public class PizzaMemDao implements IPizzaDao {
 	public PizzaMemDao() {
 		pizzas = new ArrayList<>();
 
-		pizzas.add(new Pizza(0, "PEP", "Pépéroni", 12.50));
-		pizzas.add(new Pizza(1, "MAR", "Margherita", 14.00));
-		pizzas.add(new Pizza(2, "REIN", "La Reine", 11.50));
-		pizzas.add(new Pizza(3, "FRO", "La 4 fromages", 12.00));
-		pizzas.add(new Pizza(4, "CAN", "La Cannibale", 12.50));
-		pizzas.add(new Pizza(5, "SAV", "La savoyarde", 13.00));
-		pizzas.add(new Pizza(6, "ORI", "L'orientale", 13.50));
-		pizzas.add(new Pizza(7, "IND", "L'indienne", 14.00));
+		pizzas.add(new Pizza(0, "PEP", "Pépéroni", 12.50, CategoriePizza.VIANDE));
+		pizzas.add(new Pizza(1, "MAR", "Margherita", 14.00, CategoriePizza.POISSON));
+		pizzas.add(new Pizza(2, "REIN", "La Reine", 11.50, CategoriePizza.SANS_VIANDE));
+		pizzas.add(new Pizza(3, "FRO", "La 4 fromages", 12.00, CategoriePizza.POISSON));
+		pizzas.add(new Pizza(4, "CAN", "La Cannibale", 12.50, CategoriePizza.SANS_VIANDE));
+		pizzas.add(new Pizza(5, "SAV", "La savoyarde", 13.00, CategoriePizza.VIANDE));
+		pizzas.add(new Pizza(6, "ORI", "L'orientale", 13.50,  CategoriePizza.POISSON));
+		pizzas.add(new Pizza(7, "IND", "L'indienne", 14.00,  CategoriePizza.POISSON));
 
 	}
 
@@ -36,6 +37,7 @@ public class PizzaMemDao implements IPizzaDao {
 		pizzas.add(pizza);
 
 	}
+
 
 	@Override
 	public void updatePizza(String codePizza, Pizza pizza) {
@@ -67,6 +69,10 @@ public class PizzaMemDao implements IPizzaDao {
 		return null;
 	}
 	
+	/**
+	 * @param codePizza 
+	 * @return index de la pizza correspondante
+	 */
 	public int findIndexPizzaByCode(String codePizza) {
 
 		for (int i=0; i<pizzas.size(); i++) {

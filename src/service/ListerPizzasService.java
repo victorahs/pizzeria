@@ -13,7 +13,7 @@ public class ListerPizzasService extends MenuService {
 	public void executeUC(Scanner scanner, IPizzaDao dao) {
 		// TODO Auto-generated method stub
 		for (Pizza p : dao.findAllPizzas()) {
-			System.out.println(p.getCode() + "->" + p.getLibelle() + "(" + p.getPrix() + "\u20ac" + ")");
+			System.out.println(p.toString());
 
 		}
 	}

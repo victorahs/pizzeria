@@ -3,18 +3,26 @@ package service;
 import java.util.Scanner;
 
 import dao.IPizzaDao;
+import exception.DeletePizzaException;
 
 public class SupprimerPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(Scanner scanner, IPizzaDao dao) {
+	public void executeUC(Scanner scanner, IPizzaDao dao) throws DeletePizzaException {
 		// TODO Auto-generated method stub
 		System.out.println("Veuillez saisir le code de la pizza à supprimer:");
+
 		String codeSupr = scanner.next();
 
-		dao.deletePizza(codeSupr);
+		if (dao.findPizzaByCode(codeSupr) == null) {
+
+			throw new DeletePizzaException("La pizza avec le code " + codeSupr + " n'existe pas");
+
+		} else {
+
+			dao.deletePizza(codeSupr);
+
+		}
 	}
-
-
 
 }
