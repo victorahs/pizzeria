@@ -1,7 +1,7 @@
 package service;
 
 
-/**Création de la class qui gere le menu 
+/**Crï¿½ation de la class qui gere le menu 
  * @author ETY0005
  *
  */
@@ -23,6 +23,10 @@ public class MenuServiceFactory {
 
 		case 4:
 			return new SupprimerPizzaService();
+		
+		case 5: 
+			
+			return new RemplirPizzaService();
 
 		}
 

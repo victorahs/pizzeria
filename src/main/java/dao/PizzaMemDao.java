@@ -22,7 +22,7 @@ public class PizzaMemDao implements IPizzaDao {
 		
 		pizzas = new ArrayList<>();
 
-		pizzas.add(new Pizza(0, "PEP", "Pépéroni", 12.50, CategoriePizza.VIANDE));
+		pizzas.add(new Pizza(0, "PEP", "PÃ©pÃ©roni", 12.50, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(1, "MAR", "Margherita", 14.00, CategoriePizza.POISSON));
 		pizzas.add(new Pizza(2, "REIN", "La Reine", 11.50, CategoriePizza.SANS_VIANDE));
 		pizzas.add(new Pizza(3, "FRO", "La 4 fromages", 12.00, CategoriePizza.POISSON));

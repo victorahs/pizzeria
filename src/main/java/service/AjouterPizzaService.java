@@ -22,14 +22,14 @@ public class AjouterPizzaService extends MenuService {
 		String code = scanner.next();
 		if (dao.findPizzaByCode(code) != null) {
 
-			throw new SavePizzaException("La pizza avec le code " + code + " existe déjà");
+			throw new SavePizzaException("La pizza avec le code " + code + " existe dï¿½jï¿½");
 
 		}
 		System.out.println("Veuillez saisir le nom (sans espace):");
 		String lib = scanner.next();
 		System.out.println("Veuillez saisir le prix:");
 		double prix = scanner.nextDouble();
-		System.out.println("Veuillez saisir la catégorie de pizza : Viande, Sans viande, Poisson");
+		System.out.println("Veuillez saisir la catï¿½gorie de pizza : Viande, Sans viande, Poisson");
 		String cat = scanner.next();
 		CategoriePizza categorie = CategoriePizza.findByLibelle(cat);
 

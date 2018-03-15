@@ -3,7 +3,9 @@ package pizzeria.console;
 
 import java.util.Scanner;
 
+import dao.ConnectionBdd;
 import dao.IPizzaDao;
+import dao.PizzaDaoBase;
 import dao.PizzaMemDao;
 import exception.PizzaException;
 import service.MenuService;
@@ -21,7 +23,7 @@ public class PizzeriaAdminControllerTp4 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		IPizzaDao dao = new PizzaMemDao();
+		IPizzaDao dao = new PizzaDaoBase();
 
 		Scanner questionUser = new Scanner(System.in);
 		int choix = 0;
@@ -30,8 +32,9 @@ public class PizzeriaAdminControllerTp4 {
 
 			System.out.println("1. Lister les pizzas");
 			System.out.println("2. Ajouter une nouvelle pizza");
-			System.out.println("3. Mettre à jour une pizza");
+			System.out.println("3. Mettre Ã  jour une pizza");
 			System.out.println("4. Supprimer une pizza");
+			System.out.println("5. Remplir le menu");
 			System.out.println("99. Sortir");
 
 			System.out.println("Choisissez une option dans le menu ci dessus");

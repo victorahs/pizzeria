@@ -8,7 +8,7 @@ import exception.UpdatePizzaException;
 import pizzeria.model.CategoriePizza;
 import pizzeria.model.Pizza;
 
-/**Création de la classe  qui permet de modifier la pizza
+/**Crï¿½ation de la classe  qui permet de modifier la pizza
  * @author ETY0005
  *
  */
@@ -19,7 +19,7 @@ public class ModifierPizzaService extends MenuService {
 	@Override
 	public void executeUC(Scanner scanner, IPizzaDao dao) throws UpdatePizzaException  {
 		// TODO Auto-generated method stub
-		System.out.println("Veuillez saisir le code de la pizza à  modifier:");
+		System.out.println("Veuillez saisir le code de la pizza ï¿½  modifier:");
 		
 		String codeModif = scanner.next();
 		
@@ -42,11 +42,11 @@ public class ModifierPizzaService extends MenuService {
 				System.out.println("Veuillez saisir le prix:");
 				double prixM = scanner.nextDouble();
 				
-				System.out.println("Veuillez saisir la catégorie de pizza : Viande, Sans viande, Poisson");
+				System.out.println("Veuillez saisir la catï¿½gorie de pizza : Viande, Sans viande, Poisson");
 				String catM = scanner.next();
 				if(CategoriePizza.findByLibelle(catM) == null){
 					
-					throw new UpdatePizzaException("La categorie sélectionné n'existe pas");
+					throw new UpdatePizzaException("La categorie sï¿½lectionnï¿½ n'existe pas");
 					
 				}
 				CategoriePizza categorie = CategoriePizza.findByLibelle(catM);
