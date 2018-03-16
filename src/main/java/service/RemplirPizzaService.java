@@ -17,8 +17,8 @@ public class RemplirPizzaService extends MenuService {
 		// TODO Auto-generated method stub
 
 		PizzaMemDao memDao = new PizzaMemDao();
-		List<Pizza> pizzas = new ArrayList<Pizza>();
-		pizzas = memDao.findAllPizzas();
+		List<Pizza> pizzas = memDao.findAllPizzas();
+	
 
 		PizzaDaoBase baseDao = new PizzaDaoBase();
 
