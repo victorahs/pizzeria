@@ -3,9 +3,13 @@ package pizzeria.console;
 
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import dao.ConnectionBdd;
 import dao.IPizzaDao;
 import dao.PizzaDaoBase;
+import dao.PizzaJpaDao;
 import dao.PizzaMemDao;
 import exception.PizzaException;
 import service.MenuService;
@@ -18,19 +22,19 @@ import service.MenuServiceFactory;
  */
 
 public class PizzeriaAdminControllerTp4 {
-
+	private static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminControllerTp4.class);
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		IPizzaDao dao = new PizzaDaoBase();
+		
+		IPizzaDao dao = new PizzaJpaDao();
 
 		Scanner questionUser = new Scanner(System.in);
 		int choix = 0;
 
 		do {
 
-			System.out.println("1. Lister les pizzas");
+			System.out.println ("1. Lister les pizzas");
 			System.out.println("2. Ajouter une nouvelle pizza");
 			System.out.println("3. Mettre à jour une pizza");
 			System.out.println("4. Supprimer une pizza");

@@ -1,30 +1,49 @@
 package pizzeria.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author ETY0005
- * Création de la class Pizza
+ * Crï¿½ation de la class Pizza
  *
  */
+@Entity
+@Table(name = "pizza")
+
 public class Pizza {
 	/** id : int
 	 * 
 	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	/** code : String
 	 * 
 	 */
+	@Column(name = "CODE")
 	String code;
 	/** libelle : String
 	 * 
 	 */
+	@Column(name = "LIBELLE")
 	String libelle;
 	/** prix : double
 	 * 
 	 */
+	@Column(name = "PRIX")
 	double prix;
 	/** categorie : CategoriePizza
 	 * 
 	 */
+	@Column(name = "CATEGORIE")
+	@Enumerated(EnumType.STRING)
 	CategoriePizza categorie;
 	
 	/** compteur : int
@@ -39,11 +58,11 @@ public class Pizza {
 	 * @param prix prix de la pizza
 	 * @param categorie categorie de la pizza
 	 */
+	public Pizza(){
+		
+	}
 
 	public Pizza(String code, String libelle, double prix, CategoriePizza categorie  ){
-		
-		compteur ++;
-		this.id = compteur;
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
@@ -59,8 +78,7 @@ public class Pizza {
 	 * @param categorie categorie de la pizza
 	 */
 	public Pizza(int id, String code, String libelle, double prix, CategoriePizza categorie  ){
-		
-		
+
 		this.id = id;
 		this.code = code;
 		this.libelle = libelle;
@@ -73,7 +91,7 @@ public class Pizza {
 	
 	public String toString(){
 		
-		return this.getCode() + "->" + this.getLibelle() + "(" + this.getPrix() + "\u20ac" + ") catégorie de la pizza est : " + this.categorie.getValue();
+		return this.getCode() + "->" + this.getLibelle() + "(" + this.getPrix() + "\u20ac" + ") catï¿½gorie de la pizza est : " + this.categorie.getValue();
 	}
 
 	/** Getter
