@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import javax.persistence.Embeddable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -59,7 +60,7 @@ public class PizzaJpaDao implements IPizzaDao {
 		pizza2.setCode(pizza.getCode());
 		pizza2.setLibelle(pizza.getLibelle());
 		pizza2.setPrix(pizza.getPrix());
-		// manager.persist(pizza2);
+//		manager.persist(pizza2);
 		manager.getTransaction().commit();
 		manager.close();
 
@@ -68,6 +69,14 @@ public class PizzaJpaDao implements IPizzaDao {
 	@Override
 	public void deletePizza(String codePizza) {
 		// TODO Auto-generated method stub
+		EntityManager manager = factory.createEntityManager();
+		manager.getTransaction().begin();
+		TypedQuery<Pizza> query = manager.createQuery("FROM Pizza WHERE CODE=:code", Pizza.class);
+		query.setParameter("code", codePizza);
+		Pizza pizzaSuppr = query.getSingleResult();
+		manager.remove(pizzaSuppr);
+		manager.getTransaction().commit();
+		manager.close();
 
 	}
 
