@@ -20,11 +20,11 @@ public class AjouterPizzaService extends MenuService {
 		// TODO Auto-generated method stub
 		System.out.println("Veuillez saisir le code:");
 		String code = scanner.next();
-		if (dao.findPizzaByCode(code) != null) {
-
-			throw new SavePizzaException("La pizza avec le code " + code + " existe d�j�");
-
-		}
+//		if (dao.findPizzaByCode(code) != null) {
+//
+//			throw new SavePizzaException("La pizza avec le code " + code + " existe d�j�");
+//
+//		}
 		System.out.println("Veuillez saisir le nom (sans espace):");
 		String lib = scanner.next();
 		System.out.println("Veuillez saisir le prix:");
